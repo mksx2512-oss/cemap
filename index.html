@@ -14,11 +14,15 @@
     <a href="#build" data-v="build">Quiz</a>
     <a href="#cards" data-v="cards">Flashcards</a>
     <a href="#ref" data-v="ref">Key facts</a>
+    <a href="#tutor" data-v="tutor">AI tutor</a>
     <a href="#stats" data-v="stats">Progress</a>
   </nav>
+  <button id="aibtn" class="icon" title="AI settings" aria-label="AI settings">🤖</button>
   <button id="theme" class="icon" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
 </header>
 <main id="app"></main>
+<script src="vendor/anthropic-sdk.js"></script>
+<script src="js/ai.js"></script>
 <script src="js/helpers.js"></script>
 <script src="data/topic1.js"></script>
 <script src="data/topic2.js"></script>

@@ -66,3 +66,26 @@ input[type=text]{width:100%}
 .ring span{background:var(--card);width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:20px}
 .fact{padding:8px 0;border-bottom:1px solid var(--line)}.fact b{display:block}
 @media (max-width:560px){.brand{font-size:15px}.qtext{font-size:17px}main{padding:14px 12px 80px}}
+
+.modal{position:fixed;inset:0;z-index:50;background:rgba(10,14,25,.55);display:grid;place-items:center;padding:16px}
+.sheet{width:100%;max-width:560px;max-height:92vh;overflow:auto}
+.sheet.tall{max-width:720px;height:88vh;display:flex;flex-direction:column}
+.sheet.tall .mbody{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:10px}
+.mbody>.chat{flex:1;min-height:0}
+.chat{display:flex;flex-direction:column;gap:10px;height:100%}
+.msgs{flex:1;min-height:240px;max-height:60vh;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:2px}
+.mbody .msgs{max-height:none}
+.bubble{padding:10px 14px;border-radius:14px;max-width:92%;line-height:1.5}
+.bubble p{margin:0 0 8px}.bubble p:last-child,.bubble ul:last-child,.bubble ol:last-child{margin-bottom:0}
+.bubble ul,.bubble ol{margin:0 0 8px;padding-left:22px}
+.bubble.user{align-self:flex-end;background:var(--pri);color:var(--pri-ink)}
+.bubble.assistant{align-self:flex-start;background:var(--bg);border:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--pri)}
+.cin{flex:1;width:100%;resize:vertical}
+.chat-empty{padding:12px 4px}
+.tag.ai{background:var(--warnbg);color:var(--warn)}
+.coachout p{margin:0 0 8px}.coachout ul,.coachout ol{margin:0 0 8px;padding-left:22px}
+input[type=password]{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);width:100%}
+textarea{font:inherit}
