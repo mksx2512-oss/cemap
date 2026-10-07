@@ -12,8 +12,21 @@ An interactive quiz and revision app built from the **FRE1: Industry, regulation
   (smart mix, random, unseen, missed, due, bookmarked).
 - **Practice mode** (instant feedback) and **Exam mode** (timer, question palette, flagging, review at the end).
 - **Progress**: mastery by section, accuracy, weakest areas with one-click drills, daily goal and streak.
+- **AI features (optional, bring your own Anthropic API key):**
+  - **AI tutor**: chat about anything in FRE1, grounded in the notes from the question bank and flashcards; streams answers.
+  - **Explain / ask AI** on any question, during practice or in the results review (it knows what you chose).
+  - **AI-written practice questions** for the sections you tick, saved with an "AI" tag (removable if one looks wrong).
+  - **Flashcard answer checking**: type what you remember and Claude marks it.
+  - **Debrief my mistakes** after a quiz, and a **Study coach** plan on the Progress page.
 - Bookmarks, dark mode, keyboard shortcuts (`1–5` choose, `Enter` check/next, space to flip cards), mobile friendly.
 - Progress is saved in the browser (localStorage). Export/import a backup from the Progress page.
+
+## Using the AI features
+
+Click the 🤖 button, paste an Anthropic API key (from console.anthropic.com), pick a model, and press *Save & test*.
+The key is stored only in your browser's localStorage and is sent only to api.anthropic.com. It is never included in the progress export.
+You are billed by Anthropic for usage, so set a spend limit in the Console. Without a key the app works exactly as before.
+AI answers can be wrong: the app tells Claude to rely on the in-app notes and to flag anything else, but always confirm important facts in your study text.
 
 ## Layout
 
@@ -21,7 +34,9 @@ An interactive quiz and revision app built from the **FRE1: Industry, regulation
 index.html        page shell
 css/style.css     styling
 js/helpers.js     Q / TF / MS / C authoring helpers
+js/ai.js          Anthropic SDK wrapper (streaming, structured output, settings dialog)
 js/app.js         the app
+vendor/           browser bundle of @anthropic-ai/sdk 0.132.0 (esbuild, no CDN needed)
 data/topicN.js    one question bank per topic
 ```
 
